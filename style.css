@@ -104,7 +104,7 @@ img {
 
 /********* Animation *********/
 .anime {
-  animation: rotatePlayer 3.5s linear infinite;
+  animation: rotatePlayer 4s linear infinite;
 }
 
 @keyframes rotatePlayer {
