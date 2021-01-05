@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <title>index</title>
+    <title>MusicPlayer-JS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -28,70 +28,6 @@
                 </div>
           </div>
       </div>
-      <script>
-          const play = document.getElementById("play");
-          const music = document.querySelector("audio");
-          const img = document.querySelector("img");
-          const title = document.getElementById("title");
-          const artist = document.getElementById("artist");
-          const prev = document.getElementById("prev");
-          const next = document.getElementById("next");
-
-          const songs = [
-              {
-                  title: "Comethru",
-                  artist: "Jeremy Zucker",
-                  image: "img00",
-                  track: "track00" 
-              },
-              {
-                  title: "Make you mine",
-                  artist: "Public - The Band",
-                  image: "img01",
-                  track: "track01"
-              }
-          ];
-
-          let isPlaying = false;
-          let songNumber = 0;
-
-          const playMusic = () => {
-              isPlaying = true;
-              music.play();
-              play.classList.replace("fa-play", "fa-pause");
-              img.classList.add("anime");
-          };
-
-          const pauseMusic = () => {
-              isPlaying = false;
-              music.pause();
-              play.classList.replace("fa-pause", "fa-play");
-              img.classList.remove("anime");
-          };
-
-          play.addEventListener("click", () => {
-              isPlaying ?  pauseMusic() : playMusic() ;
-          });
-
-          const loadSong = (song) => {
-              title.textContent = song.title;
-              artist.textContent = song.artist;
-              music.src = "Music/"+song.track+".mp3";
-              img.src = "Images/"+song.image+".jpg";
-          };
-
-          next.addEventListener("click", () => {
-              ++songNumber;
-              loadSong(songs[songNumber%(songs.length)]);  
-              playMusic(); 
-            });
-
-            prev.addEventListener("click", () => {
-              songNumber = songNumber - 1 + songs.length;
-              loadSong(songs[songNumber%(songs.length)]);  
-              playMusic();
-            });
-          
-      </script>
+      <script src="script.js"></script>
   </body>
 </html>
